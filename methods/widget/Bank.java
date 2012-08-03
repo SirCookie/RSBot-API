@@ -588,16 +588,16 @@ public class Bank {
 
 	private static boolean isBankBooth(final Identifiable identifiable) {
 		Arrays.sort(BANK_BOOTH_IDS);
-		return Arrays.binarySearch(BANK_BOOTH_IDS, identifiable.getId()) >= 0;
+		return identifiable instanceof SceneObject && Arrays.binarySearch(BANK_BOOTH_IDS, identifiable.getId()) >= 0;
 	}
 
 	private static boolean isBankCounter(final Identifiable identifiable) {
 		Arrays.sort(BANK_COUNTER_IDS);
-		return Arrays.binarySearch(BANK_COUNTER_IDS, identifiable.getId()) >= 0;
+		return identifiable instanceof SceneObject && Arrays.binarySearch(BANK_COUNTER_IDS, identifiable.getId()) >= 0;
 	}
 
 	private static boolean isBankChest(final Identifiable identifiable) {
 		Arrays.sort(BANK_CHEST_IDS);
-		return Arrays.binarySearch(BANK_CHEST_IDS, identifiable.getId()) >= 0;
+		return identifiable instanceof NPC && Arrays.binarySearch(BANK_CHEST_IDS, identifiable.getId()) >= 0;
 	}
 }
